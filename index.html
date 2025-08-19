@@ -1,3 +1,76 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Contoh Card</title>
+  <style>
+    :root{
+      --bg:#0d3b9e;           /* biru background halaman */
+      --card-bg:#fff;         /* warna kartu */
+      --text:#17305e;         /* warna teks utama */
+      --muted:#5b74a1;        /* warna teks sekunder */
+      --radius:18px;
+      --shadow:0 10px 24px rgba(0,0,0,.12);
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0; font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;
+      background:var(--bg); color:#fff;
+    }
+    .wrap{max-width:980px;margin-inline:auto;padding:28px 16px}
+    h1{font-size:clamp(28px,4vw,44px);line-height:1.1;margin:12px 0 8px}
+    p.lead{opacity:.9;margin:0 0 24px}
+
+    .grid{
+      display:grid; gap:18px; margin-top:22px;
+      grid-template-columns:1fr;
+    }
+    @media(min-width:640px){ .grid{ grid-template-columns:1fr; } }
+    @media(min-width:840px){ .grid{ grid-template-columns:1fr; } }
+
+    .card{
+      background:var(--card-bg); color:var(--text);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:22px 22px;
+      transition:transform .18s ease, box-shadow .18s ease;
+    }
+    .card:hover{ transform:translateY(-2px); box-shadow:0 14px 30px rgba(0,0,0,.16) }
+    .card h3{ margin:0 0 8px; font-size:22px }
+    .card p{ margin:0; color:var(--muted); line-height:1.55 }
+    .cta{
+      display:inline-block; margin-top:18px;
+      background:#ffd01a; color:#1a2a53; font-weight:700;
+      padding:14px 20px; border-radius:14px; text-decoration:none;
+    }
+  </style>
+</head>
+<body>
+  <header class="wrap">
+    <h1>Selamat Datang di Aplikasi Kami</h1>
+    <p class="lead">Solusi mudah untuk transaksi harian Anda.</p>
+    <a class="cta" href="#">Download Aplikasi</a>
+  </header>
+
+  <main class="wrap grid">
+    <article class="card" role="region" aria-labelledby="c1">
+      <h3 id="c1">Mudah Digunakan</h3>
+      <p>Antarmuka modern dan simpel, nyaman digunakan siapa saja.</p>
+    </article>
+
+    <article class="card" role="region" aria-labelledby="c2">
+      <h3 id="c2">Transaksi Cepat</h3>
+      <p>Proses hanya dalam hitungan detik dengan keamanan terjamin.</p>
+    </article>
+
+    <article class="card" role="region" aria-labelledby="c3">
+      <h3 id="c3">Dukungan 24/7</h3>
+      <p>Tim support siap membantu kapan pun dibutuhkan.</p>
+    </article>
+  </main>
+</body>
+</html>
 <!DOCTYPE html><html lang="id">
 <head>
   <meta charset="UTF-8">
@@ -41,6 +114,6 @@
     <a href="#" class="bg-yellow-400 text-blue-900 px-6 py-3 rounded-2xl font-semibold shadow-lg hover:bg-yellow-300 transition">Download Sekarang</a>
   </section>  <!-- Footer -->  <footer class="bg-blue-950 text-center py-6">
     <p class="text-sm">&copy; 2025 Aplikasi Kami. Semua Hak Dilindungi.</p>
-    <head)>="perubahan data base"<head>
+    
  </footer></body>
 </html>
