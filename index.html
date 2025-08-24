@@ -44,6 +44,38 @@
       background:#ffd01a; color:#1a2a53; font-weight:700;
       padding:14px 20px; border-radius:14px; text-decoration:none;
     }
+
+def main_menu():
+    while True:
+        print("\n=== MENU PE ===")
+        print("1. Input Data")
+        print("2. Lihat Data")
+        print("3. Edit Data")
+        print("4. Hapus Data")
+        print("5. Keluar")
+
+        pilihan = input("Pilih menu [1-5]: ")
+
+        if pilihan == "1":
+            print("👉 Anda memilih Input Data")
+            # logika input data di sini
+        elif pilihan == "2":
+            print("👉 Anda memilih Lihat Data")
+            # logika tampilkan data di sini
+        elif pilihan == "3":
+            print("👉 Anda memilih Edit Data")
+            # logika edit data
+        elif pilihan == "4":
+            print("👉 Anda memilih Hapus Data")
+            # logika hapus data
+        elif pilihan == "5":
+            print("Terima kasih, program selesai.")
+            break
+        else:
+            print("⚠️ Pilihan tidak valid, coba lagi.")
+
+if __name__ == "__main__":
+    main_menu()
   </style>
 </head>
 <body>
