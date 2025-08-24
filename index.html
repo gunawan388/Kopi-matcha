@@ -146,6 +146,71 @@ if __name__ == "__main__":
     <a href="#" class="bg-yellow-400 text-blue-900 px-6 py-3 rounded-2xl font-semibold shadow-lg hover:bg-yellow-300 transition">Download Sekarang</a>
   </section>  <!-- Footer -->  <footer class="bg-blue-950 text-center py-6">
     <p class="text-sm">&copy; 2025 Aplikasi Kami. Semua Hak Dilindungi.</p>
-    
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Teks Bergerak</title>
+  <style>
+    .marquee {
+      width: 100%;
+      overflow: hidden;
+      white-space: nowrap;
+      box-sizing: border-box;
+    }
+
+    .marquee span {
+      display: inline-block;
+      padding-left: 100%;
+      animation: bergerak 10s linear infinite;
+      font-size: 24px;
+      font-weight: bold;
+      color: blue;
+    }
+
+    @keyframes bergerak {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-100%); }
+    }
+  </style>
+</head>
+<body>
+  <div class="marquee">
+    <span>Halo, ini adalah teks yang bergerak dari kanan ke kiri!</span>
+  </div>
+</body>
+</html>
+     <!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Efek Mengetik</title>
+  <style>
+    .typing {
+      font-size: 24px;
+      font-family: monospace;
+      border-right: 2px solid black;
+      white-space: nowrap;
+      overflow: hidden;
+      width: 0;
+      animation: typing 4s steps(40, end) forwards, blink 0.7s infinite;
+    }
+
+    @keyframes typing {
+      from { width: 0; }
+      to { width: 20ch; }
+    }
+
+    @keyframes blink {
+      50% { border-color: transparent; }
+    }
+  </style>
+</head>
+<body>
+  <div class="typing">Halo, ini efek teks sedang diketik...</div>
+</body>
+</html>
  </footer></body>
 </html>
