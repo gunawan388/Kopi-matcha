@@ -1,49 +1,55 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Contoh Card</title>
-  <style>
-    :root{
-      --bg:#0d3b9e;           /* biru background halaman */
-      --card-bg:#fff;         /* warna kartu */
-      --text:#17305e;         /* warna teks utama */
-      --muted:#5b74a1;        /* warna teks sekunder */
-      --radius:18px;
-      --shadow:0 10px 24px rgba(0,0,0,.12);
-    }
-    *{box-sizing:border-box}
-    body{
-      margin:0; font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;
-      background:var(--bg); color:#fff;
-    }
-    .wrap{max-width:980px;margin-inline:auto;padding:28px 16px}
-    h1{font-size:clamp(28px,4vw,44px);line-height:1.1;margin:12px 0 8px}
-    p.lead{opacity:.9;margin:0 0 24px}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fitur Pembayaran</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-red-600 flex items-center justify-center min-h-screen">
+  
+  <div class="bg-white p-8 rounded-2xl shadow-lg w-full max-w-md">
+    <h2 class="text-2xl font-bold text-center text-gray-800 mb-6">Pembayaran</h2>
+    
+    <form action="#" method="POST" class="space-y-4">
+      <!-- Nama -->
+      <div>
+        <label class="block text-sm font-medium text-gray-700">Nama Lengkap</label>
+        <input type="text" required class="w-full mt-1 p-2 border rounded-lg focus:ring-2 focus:ring-red-500 focus:outline-none">
+      </div>
+      
+      <!-- Email -->
+      <div>
+        <label class="block text-sm font-medium text-gray-700">Email</label>
+        <input type="email" required class="w-full mt-1 p-2 border rounded-lg focus:ring-2 focus:ring-red-500 focus:outline-none">
+      </div>
+      
+      <!-- Jumlah Pembayaran -->
+      <div>
+        <label class="block text-sm font-medium text-gray-700">Jumlah Pembayaran</label>
+        <input type="number" required class="w-full mt-1 p-2 border rounded-lg focus:ring-2 focus:ring-red-500 focus:outline-none">
+      </div>
+      
+      <!-- Metode Pembayaran -->
+      <div>
+        <label class="block text-sm font-medium text-gray-700">Metode Pembayaran</label>
+        <select class="w-full mt-1 p-2 border rounded-lg focus:ring-2 focus:ring-red-500 focus:outline-none">
+          <option>Transfer Bank</option>
+          <option>Virtual Account</option>
+          <option>E-Wallet</option>
+          <option>Kartu Kredit</option>
+        </select>
+      </div>
+      
+      <!-- Tombol Bayar -->
+      <button type="submit" class="w-full bg-red-600 hover:bg-red-700 text-white py-2 rounded-lg font-semibold transition">
+        Bayar Sekarang
+      </button>
+    </form>
+  </div>
 
-    .grid{
-      display:grid; gap:18px; margin-top:22px;
-      grid-template-columns:1fr;
-    }
-    @media(min-width:640px){ .grid{ grid-template-columns:1fr; } }
-    @media(min-width:840px){ .grid{ grid-template-columns:1fr; } }
-
-    .card{
-      background:var(--card-bg); color:var(--text);
-      border-radius:var(--radius);
-      box-shadow:var(--shadow);
-      padding:22px 22px;
-      transition:transform .18s ease, box-shadow .18s ease;
-    }
-    .card:hover{ transform:translateY(-2px); box-shadow:0 14px 30px rgba(0,0,0,.16) }
-    .card h3{ margin:0 0 8px; font-size:22px }
-    .card p{ margin:0; color:var(--muted); line-height:1.55 }
-    .cta{
-      display:inline-block; margin-top:18px;
-      background:#ffd01a; color:#1a2a53; font-weight:700;
-      padding:14px 20px; border-radius:14px; text-decoration:none;
-    }
+</body>
+</html>
 
 def main_menu():
     while True:
