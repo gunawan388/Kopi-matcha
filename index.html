@@ -1,73 +1,92 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Game Bonus</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="bg-gray-100">
+import { motion } from "framer-motion"; import { Button } from "@/components/ui/button"; import { Card, CardContent } from "@/components/ui/card"; import { Rocket, Sparkles, Mail } from "lucide-react";
 
-  <!-- Header Facebook Style -->
-  <div class="bg-white shadow flex justify-between items-center px-4 py-2">
-    <h1 class="text-xl font-bold text-blue-600">facebook</h1>
-    <div class="flex space-x-4">
-      <span class="relative">
-        <span class="material-icons">home</span>
-        <span class="absolute -top-1 -right-2 bg-red-500 text-white text-xs rounded-full px-1">15+</span>
-      </span>
-      <span class="relative">
-        <span class="material-icons">people</span>
-        <span class="absolute -top-1 -right-2 bg-red-500 text-white text-xs rounded-full px-1">15+</span>
-      </span>
-      <span class="relative">
-        <span class="material-icons">notifications</span>
-        <span class="absolute -top-1 -right-2 bg-red-500 text-white text-xs rounded-full px-1">9</span>
-      </span>
+export default function LandingPage() { return ( <div className="min-h-screen bg-gradient-to-b from-white to-gray-100 text-gray-800"> {/* Navbar */} <nav className="flex justify-between items-center px-10 py-6"> <h1 className="text-2xl font-bold text-gray-900">Brand<span className="text-blue-600">X</span></h1> <div className="space-x-6 hidden md:flex"> <a href="#features" className="hover:text-blue-600">Features</a> <a href="#about" className="hover:text-blue-600">About</a> <a href="#testimonials" className="hover:text-blue-600">Testimonials</a> <a href="#contact" className="hover:text-blue-600">Contact</a> </div> <Button className="bg-blue-600 text-white rounded-xl px-4 py-2">Get Started</Button> </nav>
+
+{/* Hero Section */}
+  <section className="text-center px-6 md:px-20 py-24">
+    <motion.h2
+      initial={{ opacity: 0, y: -20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8 }}
+      className="text-5xl font-extrabold mb-6"
+    >
+      Modern Website for Your <span className="text-blue-600">Success</span>
+    </motion.h2>
+    <p className="text-lg text-gray-600 mb-8">
+      Build your presence online with a sleek, responsive, and modern design.
+    </p>
+    <div className="flex justify-center space-x-4">
+      <Button className="bg-blue-600 text-white px-6 py-3 rounded-xl text-lg">Get Started</Button>
+      <Button variant="outline" className="px-6 py-3 rounded-xl text-lg">Learn More</Button>
     </div>
-  </div>
+  </section>
 
-  <!-- Banner Promo -->
-  <div class="bg-red-600 text-white p-4 text-center font-bold text-lg">
-    Nikmati hadiah gratis saat bermain game!
-  </div>
+  {/* Features */}
+  <section id="features" className="grid md:grid-cols-3 gap-6 px-6 md:px-20 py-20">
+    {[{
+      icon: <Rocket className="w-10 h-10 text-blue-600" />,
+      title: "Fast Performance",
+      desc: "Optimized for speed and efficiency, ensuring seamless user experience."
+    }, {
+      icon: <Sparkles className="w-10 h-10 text-blue-600" />,
+      title: "Modern Design",
+      desc: "Clean and minimalistic design to showcase your brand effectively."
+    }, {
+      icon: <Mail className="w-10 h-10 text-blue-600" />,
+      title: "Easy Contact",
+      desc: "Stay connected with your customers through integrated solutions."
+    }].map((f, i) => (
+      <Card key={i} className="shadow-lg rounded-2xl">
+        <CardContent className="p-6 text-center">
+          <div className="flex justify-center mb-4">{f.icon}</div>
+          <h3 className="text-xl font-semibold mb-2">{f.title}</h3>
+          <p className="text-gray-600">{f.desc}</p>
+        </CardContent>
+      </Card>
+    ))}
+  </section>
 
-  <!-- Kotak Bonus -->
-  <div class="max-w-md mx-auto bg-yellow-200 border-4 border-yellow-500 rounded-2xl shadow-lg mt-4 p-4 text-center">
-    <h2 class="text-xl font-bold mb-2">Bind untuk menjadi akun resmi</h2>
-    <p class="text-lg text-red-700 font-bold">Rp 127</p>
-    
-    <input type="text" placeholder="Masukkan Nomor HP" class="w-full border p-2 rounded mt-2">
-    <input type="password" placeholder="Kata Sandi (6-20 karakter)" class="w-full border p-2 rounded mt-2">
-    <input type="password" placeholder="Konfirmasi Kata Sandi" class="w-full border p-2 rounded mt-2">
-    
-    <button class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg mt-3 w-full">
-      Mengikat
-    </button>
-  </div>
-
-  <!-- Kotak Surat -->
-  <div class="max-w-md mx-auto mt-6 bg-white rounded-xl shadow-md p-4">
-    <h3 class="font-bold mb-3">Kotak Surat</h3>
-    <div class="flex justify-between items-center border-b py-2">
-      <span>Bonus Misteri (02/10/2024 19:07)</span>
-      <button class="bg-green-500 text-white px-3 py-1 rounded">Ambil</button>
+  {/* About */}
+  <section id="about" className="px-6 md:px-20 py-20 bg-white">
+    <div className="grid md:grid-cols-2 gap-10 items-center">
+      <motion.img
+        src="https://source.unsplash.com/600x400/?technology,web"
+        alt="About"
+        className="rounded-2xl shadow-lg"
+        initial={{ opacity: 0, x: -50 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.8 }}
+      />
+      <div>
+        <h2 className="text-3xl font-bold mb-4">About Us</h2>
+        <p className="text-gray-600 mb-4">
+          We provide modern and scalable digital solutions that help businesses
+          grow and reach their goals. With a focus on design and performance,
+          we ensure your online presence stands out.
+        </p>
+        <Button className="bg-blue-600 text-white px-6 py-3 rounded-xl">Learn More</Button>
+      </div>
     </div>
-    <div class="flex justify-between items-center border-b py-2">
-      <span>Bonus Misteri (02/10/2024 16:00)</span>
-      <button class="bg-green-500 text-white px-3 py-1 rounded">Ambil</button>
-    </div>
-    <div class="flex justify-between items-center py-2">
-      <span>Aktivitas Rebate (02/10/2024 12:43)</span>
-      <button class="bg-green-500 text-white px-3 py-1 rounded">Ambil</button>
-    </div>
-  </div>
+  </section>
 
-  <!-- Footer -->
-  <div class="max-w-md mx-auto mt-6 text-center">
-    <p class="font-bold text-gray-700">10 Billion Free Coins?! 🎉</p>
-    <button class="bg-blue-600 text-white px-6 py-2 rounded-lg mt-2">Mainkan Game</button>
-  </div>
+  {/* Testimonials */}
+  <section id="testimonials" className="px-6 md:px-20 py-20 bg-gray-50 overflow-hidden">
+    <h2 className="text-3xl font-bold text-center mb-10">What Our Customers Say</h2>
+    <motion.div
+      className="flex space-x-10 text-lg font-medium text-gray-700"
+      animate={{ x: [0, -400, 0] }}
+      transition={{ repeat: Infinity, duration: 10, ease: "linear" }}
+    >
+      <p>⭐⭐⭐⭐⭐ - Budi: "Layanannya sangat memuaskan!"</p>
+      <p>⭐⭐⭐⭐⭐ - Andireno: "Website modern dan cepat sekali."</p>
+    </motion.div>
+  </section>
 
-</body>
-</html>
+  {/* Footer */}
+  <footer id="contact" className="text-center py-10 bg-gray-100 border-t">
+    <p className="text-gray-600">© 2025 BrandX. All rights reserved.</p>
+  </footer>
+</div>
+
+); }
+
